@@ -23,7 +23,7 @@ export default function RestablecerScreen() {
 
     return (
         <ImageBackground 
-            source={require('../assets/gatos.jpg')} 
+            source={{ uri: 'https://i.pinimg.com/736x/a1/37/c8/a137c873c3db0c4426d7f9201a3c4c1b.jpg' }} 
             style={styles.background}
         >
             <View style={styles.overlay}>
@@ -56,17 +56,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     overlay: {
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        backgroundColor: 'rgba(0, 0, 0, 0.6)', 
         padding: 25,
-        borderRadius: 10,
-        width: '90%',
+        borderRadius: 20,
+        width: '85%',
         alignItems: 'center',
+        borderWidth: 2,
+        borderColor: '#A8D5BA',
+        shadowColor: '#A8D5BA',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 6,
     },
     title: {
-        fontSize: 24,
+        fontSize: 28,
         fontWeight: 'bold',
-        color: '#fff',
+        color: '#A8D5BA',
         marginBottom: 10,
+        textAlign: 'center',
     },
     subtitle: {
         fontSize: 14,
@@ -77,18 +84,18 @@ const styles = StyleSheet.create({
     input: {
         width: '100%',
         padding: 12,
-        borderWidth: 1,
+        borderWidth: 1.5,
         borderColor: '#fff',
-        borderRadius: 5,
+        borderRadius: 25,
         marginBottom: 15,
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
-        color: '#fff',
+        color: '#A8D5BA',
+        backgroundColor: 'white',
     },
     button: {
-        backgroundColor: '#ff8c00',
+        backgroundColor: '#A8D5BA',
         paddingVertical: 12,
         paddingHorizontal: 25,
-        borderRadius: 8,
+        borderRadius: 25,
         alignItems: 'center',
         width: '100%',
     },
@@ -99,3 +106,4 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 });
+

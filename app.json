@@ -4,11 +4,11 @@
     "slug": "app_09",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/mandarina.jpg",
+    "icon": "./assets/oso.jpg",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/mandarina.jpg",
+      "image": "./assets/oso.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,12 +17,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage":"./assets/mandarina.jpg",
+        "foregroundImage":"./assets/oso.jpg",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/mandarina.jpg"
+      "favicon": "./assets/oso.jpg"
     }
   }
 }

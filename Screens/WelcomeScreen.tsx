@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { Button, StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '../config/Config';
@@ -18,12 +18,14 @@ export default function WelcomeScreen({ navigation }: any) {
 
   return (
     <ImageBackground
-      source={{ uri: 'https://i.pinimg.com/736x/ca/5a/9e/ca5a9e404b614161e9c7806e73f23ace.jpg' }}
+      source={{ uri: 'https://i.pinimg.com/736x/69/d9/cc/69d9ccf6e8dd35dc0ee65bce08db89a1.jpg' }}
       style={styles.container}
     >
       <View style={styles.overlay}>
         <Text style={styles.title}>Bienvenido</Text>
-        <Button title="Cerrar Sesión" onPress={logout} color="#4CAF50" />
+        <TouchableOpacity style={styles.button} onPress={logout}>
+          <Text style={styles.buttonText}>Cerrar Sesión</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
@@ -36,17 +38,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    padding: 20,
-    borderRadius: 15,
-    width: '80%',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)', 
+    padding: 30,
+    borderRadius: 20,
+    width: '85%',
     alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#A8D5BA',
+    shadowColor: '#A8D5BA',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
   },
   title: {
-    fontSize: 35,
+    fontSize: 40,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#A8D5BA', 
     marginBottom: 20,
+    textShadowColor: '#003300', 
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 4,
+  },
+  button: {
+    backgroundColor: '#A8D5BA',
+    paddingVertical: 12,
+    paddingHorizontal: 60,
+    borderRadius: 25,
+    marginTop: 20,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
+
 

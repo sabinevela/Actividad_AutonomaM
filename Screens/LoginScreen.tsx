@@ -47,18 +47,35 @@ export default function LoginScreen({ navigation }: any) {
 
   return (
     <ImageBackground
-      source={{ uri: 'https://i.pinimg.com/736x/dd/92/bb/dd92bb8f7847d47f2ee41efccaf412fd.jpg' }}
+      source={{ uri: 'https://i.pinimg.com/736x/5e/c3/60/5ec360e2f272f183b0996d33d697af94.jpg' }}
       style={styles.container}
     >
       <View style={styles.overlay}>
         <Text style={styles.title}>Iniciar Sesión</Text>
-        <TextInput placeholder="Ingresar correo" style={styles.input} onChangeText={setCorreo} value={correo} keyboardType="email-address" autoCapitalize="none" />
-        <TextInput placeholder="Ingresar contraseña" style={styles.input} onChangeText={setContraseña} value={contraseña} secureTextEntry />
-        <Button title="Login" onPress={login} color="#4CAF50" />
-        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+        <TextInput 
+          placeholder="Ingresar correo" 
+          style={styles.input} 
+          onChangeText={setCorreo} 
+          value={correo} 
+          keyboardType="email-address" 
+          autoCapitalize="none" 
+        />
+        <TextInput 
+          placeholder="Ingresar contraseña" 
+          style={styles.input} 
+          onChangeText={setContraseña} 
+          value={contraseña} 
+          secureTextEntry 
+        />
+        <TouchableOpacity style={styles.button} onPress={login}>
+          <Text style={styles.buttonText}>Ingresar</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Registro')}>
           <Text style={styles.createAccount}>Crear una cuenta</Text>
         </TouchableOpacity>
-        <Button title="Olvidaste la contraseña" onPress={() => navigation.navigate('Restablecer')} />
+        <TouchableOpacity onPress={() => navigation.navigate('Restablecer')}>
+          <Text style={styles.forgotPassword}>¿Olvidaste la contraseña?</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
@@ -71,37 +88,62 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    padding: 20,
-    borderRadius: 10,
-    width: '80%',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    padding: 30,
+    borderRadius: 20,
+    width: '85%',
     alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#A8D5BA',
+    shadowColor: '#A8D5BA',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
   },
   title: {
-    fontSize: 30,
+    fontSize: 35,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#A8D5BA',
     marginBottom: 20,
+    textShadowColor: '#003300',
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 4,
   },
   input: {
     width: '100%',
     height: 45,
-    borderColor: '#fff',
+    borderColor: '#A8D5BA',
     borderWidth: 1.5,
     borderRadius: 25,
     paddingHorizontal: 15,
     marginBottom: 15,
     fontSize: 16,
+    color: '#A8D5BA',
+    backgroundColor: 'white',
+  },
+  button: {
+    backgroundColor: '#A8D5BA',
+    paddingVertical: 12,
+    paddingHorizontal: 60,
+    borderRadius: 25,
+    marginBottom: 15,
+    alignItems: 'center',
+  },
+  buttonText: {
     color: '#fff',
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
   createAccount: {
-    color: '#fff',
+    color: '#A8D5BA',
     marginTop: 15,
     textDecorationLine: 'underline',
+    fontSize: 16,
+  },
+  forgotPassword: {
+    color: '#A8D5BA',
+    marginTop: 15,
+    textDecorationLine: 'underline',
+    fontSize: 16,
   },
 });
-
-
-
-
